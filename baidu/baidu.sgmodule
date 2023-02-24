@@ -1,0 +1,11 @@
+#!name=百度
+#!desc=贴吧去广告
+
+[MITM]
+hostname = *.baidu.com
+
+[Script]
+remove-ad = type=http-response,pattern=^https?://m?api\.weibo\.c(n|om)/2/.*,requires-body=1,max-size=0,debug=1,script-path=https://raw.githubusercontent.com/FengZhiyuan/proxy-script/main/webo_ad.js,script-update-interval=0
+
+
+
