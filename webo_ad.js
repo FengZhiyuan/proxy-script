@@ -1,13 +1,14 @@
+// version: 1.0.0
 const log = console.log.bind(console)
 
-const version = 'v0.1'
+let url = $request.url
+log("weibo_ad url is ", url)
+let body = $response.body
 
-const $ = new Env("微博去广告")
+if (url.includes("weibointl")) {
+    let obj = JSON.parse(body)
+    obj.data = []
+    body = JSON.stringify(obj)
+}
 
-var url = $request.url
-log(url)
-
-const body = $response.body
-log(body)
-
-$.done({ body })
+$done({ body })
