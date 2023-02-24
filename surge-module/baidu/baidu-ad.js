@@ -41,7 +41,11 @@ class Surge {
 // 去除时间线广告
 const removePicturePageAd = (surge) => {
     const body = surge.bodyFromApi()
-    delete body.thread
+    // 删除推荐信息
+    body.recom_ala_info = []
+    // 删除推荐直播
+    body.recom_live_list = []
+    //
     surge.done({ body: surge.bodyToJson(body) })
 }
 
