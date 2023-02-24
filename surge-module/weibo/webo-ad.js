@@ -36,18 +36,17 @@ class Surge {
 
 // 去除时间线广告
 const removeTimelineAd = (surge) => {
-    const url = surge.urlFromApi()
     const body = surge.bodyFromApi()
-    if (url.includes("weibointl")) {
-        body.data = []
-    }
-    //
+    body.data = []
     surge.done({ body: surge.bodyToJson(body) })
 }
 
 const __main = () => {
     const surge = Surge.new()
-    removeTimelineAd(surge)
+    const url = surge.urlFromApi()
+    if (url.includes("weibointl")) {
+        removeTimelineAd(surge)
+    }
 }
 
 __main()
