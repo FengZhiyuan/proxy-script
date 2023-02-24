@@ -55,6 +55,8 @@ const __main = () => {
     // 删除图片预览广告
     if (url.includes("/picpage")) {
         removePicturePageAd(surge)
+    } else {
+        surge.done({})
     }
 }
 

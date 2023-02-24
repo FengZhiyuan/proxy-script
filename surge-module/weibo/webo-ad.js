@@ -46,6 +46,8 @@ const __main = () => {
     const url = surge.urlFromApi()
     if (url.includes("weibointl")) {
         removeTimelineAd(surge)
+    } else {
+        surge.done({})
     }
 }
 
