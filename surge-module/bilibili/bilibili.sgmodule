@@ -1,0 +1,11 @@
+#!name=百度
+#!desc=贴吧去广告
+
+[MITM]
+hostname = *.bilibili.com
+
+[Script]
+baidu-remove-ad = type=http-response,pattern=^https?://.*\.bilibili\.c(n|om)/.*$,requires-body=1,max-size=0,debug=1,script-path=https://raw.githubusercontent.com/FengZhiyuan/proxy-script/main/surge-module/bilibili/bilibili-ad.js,script-update-interval=0
+
+
+
