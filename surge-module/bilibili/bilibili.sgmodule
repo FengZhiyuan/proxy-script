@@ -1,5 +1,5 @@
-#!name=百度
-#!desc=贴吧去广告
+#!name=bilibili
+#!desc=bilibili去广告、优化
 
 [MITM]
 hostname = *.bilibili.com
