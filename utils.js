@@ -1,4 +1,3 @@
-// 创建个 Surge 类用来封装 surge 的 api
 class Surge {
     constructor() {
         // 请求的 request
@@ -14,11 +13,15 @@ class Surge {
         return this.instance
     }
 
+    urlFromApi() {
+        return this.request.url
+    }
+
     bodyFromApi() {
         return JSON.parse(this.response.body)
     }
 
-    bodyJson(bodyData) {
+    toJson(bodyData) {
         return JSON.stringify(bodyData)
     }
 

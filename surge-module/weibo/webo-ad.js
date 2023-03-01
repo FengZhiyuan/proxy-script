@@ -24,7 +24,7 @@ class Surge {
         return JSON.parse(this.response.body)
     }
 
-    bodyToJson(bodyData) {
+    toJson(bodyData) {
         return JSON.stringify(bodyData)
     }
 
@@ -32,20 +32,21 @@ class Surge {
     done(data) {
         return $done({...data})
     }
+
+    removeTimelineAd() {
+        const body = this.bodyFromApi()
+        body.data = []
+        this.done({ body: this.toJson(body) })
+    }
 }
 
 // 去除时间线广告
-const removeTimelineAd = (surge) => {
-    const body = surge.bodyFromApi()
-    body.data = []
-    surge.done({ body: surge.bodyToJson(body) })
-}
-
 const __main = () => {
     const surge = Surge.new()
     const url = surge.urlFromApi()
     if (url.includes("weibointl")) {
-        removeTimelineAd(surge)
+        log('微博去广告：/weibointl')
+        surge.removeTimelineAd()
     } else {
         surge.done({})
     }
