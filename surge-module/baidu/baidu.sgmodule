@@ -2,7 +2,7 @@
 #!desc=贴吧去广告
 
 [MITM]
-hostname = *.baidu.com
+hostname = %APPEND% *.baidu.com
 
 [Script]
 baidu-remove-ad = type=http-response,pattern=^https?://.*\.baidu\.c(n|om)/.*$,requires-body=1,max-size=0,debug=1,script-path=https://raw.githubusercontent.com/FengZhiyuan/proxy-script/main/surge-module/baidu/baidu-ad.js,script-update-interval=0
