@@ -1,5 +1,5 @@
 #!name=bilibili
-#!desc=解除部分视频后台限制,开屏页广告,推荐页广告,动态(最常访问/推荐话题/列表广告),视频播放页面(up主推荐广告,相关推荐广告)
+#!desc=当前支持首页去列表区广告
 
 [MITM]
 hostname = %APPEND% app.bilibili.com, grpc.biliapi.net

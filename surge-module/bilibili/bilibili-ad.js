@@ -34,28 +34,30 @@ class Surge {
     done(data) {
         return $done({...data})
     }
-}
 
-// 删除列表栏广告
-const removeListAd = (surge) => {
-    const body = surge.bodyFromApi()
-    const data = body.data || {}
-    const items = data.items || []
-    const newItems = items.filter((item) => {
-        // 广告的对象带有 ad_info 属性
-        return !item.ad_info
-    })
-    data.items = newItems || []
-    //
-    surge.done({ body: surge.toJson(body) })
+    // 删除列表栏广告
+
+    removeListAd() {
+        const body = this.bodyFromApi()
+        const data = body.data || {}
+        const items = data.items || []
+        const newItems = items.filter((item) => {
+            // 广告的对象带有 ad_info 属性
+            return !item.ad_info
+        })
+        data.items = newItems || []
+        //
+        this.done({ body: this.toJson(body) })
+    }
 }
 
 const __main = () => {
     const surge = Surge.new()
     const url = surge.urlFromApi()
     // 删除列表栏广告
-    if (url.includes("x/v2/feed/index")) {
-        removeListAd(surge)
+    if (url.includes("/feed/index")) {
+        log("bilibili 去广告：/feed/index")
+        surge.removeListAd()
     } else {
         surge.done({})
     }
