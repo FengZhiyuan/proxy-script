@@ -1,4 +1,5 @@
-// https://app.bilibili.com/x/v2/feed/index
+// 推荐列表接口 https://app.bilibili.com/x/v2/feed/index
+// 动态列表接口 https://grpc.biliapi.net/bilibili.app.dynamic.v2.Dynamic/DynAll
 
 const log = console.log.bind(console)
 
