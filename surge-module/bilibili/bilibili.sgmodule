@@ -1,8 +1,8 @@
 #!name=bilibili
-#!desc=bilibili去广告
+#!desc=解除部分视频后台限制,开屏页广告,推荐页广告,动态(最常访问/推荐话题/列表广告),视频播放页面(up主推荐广告,相关推荐广告)
 
 [MITM]
-hostname = app.bilibili.com
+hostname = %APPEND% app.bilibili.com, grpc.biliapi.net
 
 [Script]
 bilibili-remove-ad=type=http-response,pattern=^https?://.*\.bilibili\.c(n|om)/.*$,requires-body=1,max-size=0,debug=1,script-path=https://raw.githubusercontent.com/FengZhiyuan/proxy-script/main/surge-module/bilibili/bilibili-ad.js,script-update-interval=0
