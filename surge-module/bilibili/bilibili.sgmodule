@@ -1,8 +1,8 @@
 #!name=bilibili
-#!desc=bilibili去广告、优化
+#!desc=bilibili去广告
 
 [MITM]
-hostname = app.bilibili.com, grpc.biliapi.net
+hostname = *.bilibili.com, *.biliapi.net
 
 [Script]
 bilibili-remove-ad = type=http-response,pattern=^https?://.*\.bilibili\.c(n|om)/.*$,requires-body=1,max-size=0,debug=1,script-path=https://raw.githubusercontent.com/FengZhiyuan/proxy-script/main/surge-module/bilibili/bilibili-ad.js,script-update-interval=0
