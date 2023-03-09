@@ -47,7 +47,7 @@ class Surge {
         })
 
         const count = items.length - newItems.length
-        log(`*** bilibili 去广告：/feed/index, 删除广告 ${count} 条`)
+        log(`*** /feed/index 删除广告 ${count} 条`)
         data.items = newItems || []
         //
         this.done({ body: this.toJson(body) })
