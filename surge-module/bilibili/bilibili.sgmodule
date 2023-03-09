@@ -2,7 +2,7 @@
 #!desc=当前支持首页去列表区广告
 
 [MITM]
-hostname = %APPEND% *.bilibili.com, *.biliapi.net
+hostname = %APPEND% bilibili.com,biliapi.net
 
 [Script]
 bilibili-remove-ad=type=http-response,pattern=^https?://(?:.*\.)?(?:bilibili|biliapi\.net)/.*$,requires-body=1,max-size=0,debug=1,script-path=https://raw.githubusercontent.com/FengZhiyuan/proxy-script/main/surge-module/bilibili/bilibili-ad.js,script-update-interval=0
