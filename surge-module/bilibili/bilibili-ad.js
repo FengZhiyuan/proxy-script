@@ -45,6 +45,9 @@ class Surge {
             // 广告的对象带有 ad_info 属性
             return !item.ad_info
         })
+
+        const count = items.length - newItems.length
+        log(`*** bilibili 去广告：/feed/index, 删除广告 ${count} 条`)
         data.items = newItems || []
         //
         this.done({ body: this.toJson(body) })
@@ -56,7 +59,7 @@ const __main = () => {
     const url = surge.urlFromApi()
     // 删除列表栏广告
     if (url.includes("/feed/index")) {
-        log("*** bilibili 去广告：/feed/index")
+        // log("*** bilibili 去广告：/feed/index")
         surge.removeListAd()
     } else {
         surge.done({})
