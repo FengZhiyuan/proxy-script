@@ -54,6 +54,7 @@ class Surge {
 const __main = () => {
     const surge = Surge.new()
     const url = surge.urlFromApi()
+    log('bilibili_ad url', url)
     // 删除列表栏广告
     if (url.includes("/feed/index")) {
         log("bilibili 去广告：/feed/index")
