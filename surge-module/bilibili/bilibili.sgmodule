@@ -5,7 +5,7 @@
 hostname = %APPEND% *.bilibili.com, *.biliapi.net
 
 [Script]
-bilibili-remove-ad=type=http-response,pattern=https?://app\.bilibili\.com/.*,requires-body=1,max-size=0,debug=1,script-path=https://raw.githubusercontent.com/FengZhiyuan/proxy-script/main/surge-module/bilibili/bilibili-ad.js,script-update-interval=0
+bilibili-remove-ad=type=http-response,pattern=^https?://.*\.(bilibili|biliapi)\.(com|net)/.*$,requires-body=1,max-size=0,debug=1,script-path=https://raw.githubusercontent.com/FengZhiyuan/proxy-script/main/surge-module/bilibili/bilibili-ad.js,script-update-interval=0
 
 
 
